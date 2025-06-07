@@ -1,0 +1,19 @@
+//
+// Created by Kaled Frausto on 07/06/25.
+//
+
+#include "Pelicula.hpp"
+#include <iostream>
+using namespace std;
+
+Pelicula::Pelicula(string id, string titulo, double duracion, string genero, string clasificacion, string paisDeOrigen, double duracionCreditos)
+    : Video(id, titulo, duracion, genero), clasificacion(clasificacion), paisDeOrigen(paisDeOrigen), duracionCreditos(duracionCreditos) {}
+
+void Pelicula::mostrarInfo() override{
+    cout << "titulo: " << titulo << endl;
+    cout << "id: " << id << " duracion: " << duracion << " genero: " << genero << "clasificacion: " << clasificacion << " pais de origen: " << paisDeOrigen << " duracion creditos: " << duracionCreditos;
+}
+
+double Pelicula::calcularDuracion() {
+    return duracion + duracionCreditos;
+}
