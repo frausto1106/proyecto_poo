@@ -1,60 +1,93 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <nlohmann/json.hpp>
 
-#include "clases/Serie/Serie.hpp"
-#include "clases/Episodio/Episodio.hpp"
+#include "clases/StreamingServ/StreamimgServ.hpp"
 
 using json = nlohmann::json;
 using namespace std;
 
 int main() {
-    ifstream file("bucket.json");
-    if (!file.is_open()) {
-        cerr << "Error al abrir datos.json\n";
-        return 1;
-    }
-    json data;
-    file >> data;
+    StreamimgServ servicio;
+    int opcionPrincipal;
 
-    vector<Serie> series;
+    do {
+        cout << "=========== MENÚ PRINCIPAL ===========\n";
+        cout << "1 - Menú de Series\n";
+        cout << "2 - Mostrar Catálogo de Películas\n";
+        cout << "3 - Mostrar Películas por Calificación\n";
+        cout << "4 - Calificar una Película\n";
+        cout << "5 - Mostrar todos los videos\n";
+        cout << "6 - Salir\n";
+        cout << "Selecciona una opción: ";
+        cin >> opcionPrincipal;
 
-    for (const auto& s : data["series"]) {
-        vector<Episodio> episodiosVec;
-        for (const auto& ep : s["episodios"]) {
-            Episodio episodio(
-                ep["id"].get<string>(),
-                ep["titulo"].get<string>(),
-                ep["duracion"].get<double>(),
-                ep["numeroDeCalificaciones"].get<int>(),
-                ep["sumCalificaciones"].get<int>(),
-                ep["calificacion"].get<double>(),
-                ep["genero"].get<string>(),
-                ep["temporada"].get<int>()
-            );
-            episodiosVec.push_back(episodio);
+        switch (opcionPrincipal) {
+            case 1: {
+                int opcionSerie;
+                do {
+                    opcionSerie = servicio.mostrarMenuSeries();
+                    switch (opcionSerie) {
+                        case 1:
+                            servicio.mostrarCatalogo();
+                            break;
+                        case 2:
+                            servicio.infoSerie();
+                            break;
+                        case 3:
+                            servicio.mostrarEps("");
+                            break;
+                        case 4:
+                            servicio.mostrarEpsPorTemporada();
+                            break;
+                        case 5:
+                            servicio.mostrarEpsPorCalificacion();
+                            break;
+                        case 6:
+                            servicio.calificarSerie();
+                            break;
+                        case 7:
+                            servicio.calcularMaratonSerie();
+                            break;
+                        case 8:
+                            servicio.menuCapitulo();
+                            break;
+                        case 9:
+                            servicio.mostrarTodosLosVideos();
+                            break;
+                        case 10:
+                            cout << "Regresando al menú principal...\n";
+                            break;
+                        default:
+                            cout << "Opción no válida.\n";
+                            break;
+                    }
+                    cout << "\n";
+                } while (opcionSerie != 10);
+                break;
+            }
+            case 2:
+                servicio.mostrarCatalogoDePeliculas();
+                break;
+            case 3:
+                servicio.mostrarPeliculasPorCalificacion();
+                break;
+            case 4:
+                servicio.calificarPeli();
+                break;
+            case 5:
+                servicio.mostrarTodosLosVideos();
+                break;
+            case 6:
+                cout << "Saliendo del programa.\n";
+                break;
+            default:
+                cout << "Opción no válida.\n";
+                break;
         }
 
-        Serie serie(
-            s["id"].get<string>(),
-            s["nombre"].get<string>(),
-            s["calificacion"].get<double>(),
-            s["numeroDeCalificaciones"].get<int>(),
-            s["sumCalificaciones"].get<int>(),
-            s["paisDeOrigen"].get<string>(),
-            s["genero"].get<string>(),
-            s["clasificacion"].get<string>(),
-            episodiosVec
-        );
-
-        series.push_back(serie);
-    }
-
-    for (int i = 0 ; i < series.size(); i++) {
-
-       series[i].mostrarEpisodios();
-    }
+        cout << "\n";
+    } while (opcionPrincipal != 6);
 
     return 0;
 }

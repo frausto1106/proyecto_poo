@@ -36,10 +36,18 @@ public:
 
 
     void mostrarEpisodios();
+    string getNombre();
+    vector<Episodio> getEpisodios();
+    string getId();
     void agregarEpisodio(Episodio ep);
-    void mostrarEpisodioPorTemporada(int temporada);
+    void mostrarEpisodioPorTemporada();
+
+    void mostrarEpisodioPorCalificacion();
+
     void mostrarInfo();
     void calificar();
+
+    void calucularMaraton();
 };
 
 

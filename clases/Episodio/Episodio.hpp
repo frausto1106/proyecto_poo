@@ -14,22 +14,16 @@ protected:
     int temporada;
 
 public:
-    Episodio(
-        string id,
-        string titulo,
-        double duracion,
-        int numeroDeCalificaciones,
-        int sumCalificacion,
-        double calificacion,
-        string genero,
-        int temporada
-    );
+    Episodio(std::string id, std::string nombre, double duracion,
+             int numeroDeCalificaciones, double sumCalificacion, double calificacion,
+             std::string genero, int temporada);
 
     int getTemporada();
-    void mostrarInfo() override;
 
-    friend double operator +(Episodio& e1, Episodio& e2);
-    friend double operator +(int& e1, Episodio& e2);
+
+    void mostrarInfo() override;
+    friend double operator +(Episodio& ep1, Episodio& ep2);
+    friend double operator +(Episodio& ep1, double ep2);
 };
 
 

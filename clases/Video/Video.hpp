@@ -8,34 +8,36 @@
 
 using namespace std;
 
-
-
 class Video {
 protected:
     string id;
     string titulo;
     double duracion;
     int numeroDeCalificaciones;
-    double calificacion;
+    int calificacion;
     string genero;
     int sumCalificacion;
 
-    Video(
-        string id,
-        string titulo,
-        double duracion,
-        int numeroDeCalificaciones,
-        int sumCalificacion,
-        double calificacion,
-        string genero
-    );
+    Video(string id, string titulo, double duracion, int numeroDeCalificaciones, int sumCalificacion, int calificacion,
+          string genero);
 
 public:
     virtual  void mostrarInfo() = 0;
+
+
+
     virtual double calcularDuracion();
     void calificar();
+    double getDuracion();
 
+
+    int getCalificacion();
+
+    string getTitulo();
+
+    string getId();
 };
+
 
 
 

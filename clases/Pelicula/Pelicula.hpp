@@ -23,7 +23,7 @@ public:
         double duracion,
         int numeroDeCalificaciones,
         int sumCalificacion,
-        double calificacion,
+        int calificacion,
         string genero,
         string clasificacion,
         string paisDeOrigen,
@@ -31,6 +31,9 @@ public:
     );
 
     void mostrarInfo() override;
+
+    int getCalificacion();
+
     double calcularDuracion() override;
 };
 

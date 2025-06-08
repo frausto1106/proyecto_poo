@@ -12,7 +12,7 @@ Pelicula::Pelicula(
     double duracion,
     int numeroDeCalificaciones,
     int sumCalificacion,
-    double calificacion,
+    int calificacion,
     string genero,
     string clasificacion,
     string paisDeOrigen,
@@ -24,9 +24,15 @@ Pelicula::Pelicula(
       duracionCreditos(duracionCreditos)
 {}
 
-void Pelicula::mostrarInfo() override{
+void Pelicula::mostrarInfo() {
+    cout << endl;
+    cout << "---------------PELICULA------------: "<< endl;
     cout << "titulo: " << titulo << endl;
-    cout << "id: " << id << " duracion: " << duracion << " genero: " << genero << "clasificacion: " << clasificacion << " pais de origen: " << paisDeOrigen << " duracion creditos: " << duracionCreditos;
+    cout << "id: " << id << " ,duracion: " << duracion << " ,genero: " << genero << " ,clasificacion: " << clasificacion << " ,pais de origen: " << paisDeOrigen << " ,duracion de creditos: " << duracionCreditos<< endl;
+}
+
+int Pelicula::getCalificacion() {
+    return calificacion;
 }
 
 double Pelicula::calcularDuracion() {

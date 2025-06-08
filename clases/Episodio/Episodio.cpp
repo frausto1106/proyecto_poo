@@ -8,17 +8,11 @@
 using namespace std;
 
 
-Episodio::Episodio(
-        string id,
-        string titulo,
-        double duracion,
-        int numeroDeCalificaciones,
-        int sumCalificacion,
-        double calificacion,
-        string genero,
-        string temporada
-    ) : Video(id, titulo, duracion, numeroDeCalificaciones, sumCalificacion, calificacion, genero),
-        temporada(temporada)
+Episodio::Episodio(std::string id, std::string nombre, double duracion,
+                   int numeroDeCalificaciones, double sumCalificacion, double calificacion,
+                   std::string genero, int temporada)
+    : Video(id, nombre, duracion, numeroDeCalificaciones, sumCalificacion, calificacion, genero),
+      temporada(temporada)
 {}
 
 int Episodio::getTemporada() {
@@ -26,14 +20,20 @@ int Episodio::getTemporada() {
 }
 
 
-void Episodio::mostrarInfo() override {
+
+
+void Episodio::mostrarInfo()  {
+
+    cout<<"-----------episodio-----------"<<endl;
     cout<<"titulo: "<< titulo <<endl;
-    cout << "id: "<< id << "duracion: "<< duracion<<"genero: "<<genero<< "temporada: "<<temporada;
-}
-double operator +(Episodio &ep1, Episodio &ep2){
-    return ep1.duracion + ep2.duracion;
+    cout << "id: "<< id << ", duracion: "<< duracion<<", genero: "<<genero<< ", temporada: "<<temporada<<endl;
 }
 
-double operator +(Episodio &ep1, double &ep2){
-    return ep1.duracion + ep2;
+
+double operator +(Episodio& ep1, Episodio& ep2){
+    return ep1.getDuracion() + ep2.getDuracion();
+}
+
+double operator +(Episodio& ep1, double ep2){
+    return ep2 + ep1.getDuracion();
 }

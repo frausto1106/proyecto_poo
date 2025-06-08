@@ -12,7 +12,7 @@ Video::Video(
     double duracion,
     int numeroDeCalificaciones,
     int sumCalificacion,
-    double calificacion,
+    int calificacion,
     string genero
 ) :
     id(id),
@@ -39,4 +39,20 @@ void Video::calificar() {
 
     calificacion = (sumCalificacion /numeroDeCalificaciones);
 
-};
+}
+
+double Video::getDuracion() {
+ return duracion;
+}
+int Video::getCalificacion() {
+    return calificacion;
+}
+
+string Video::getTitulo() {
+    return titulo;
+}
+
+string Video::getId() {
+    return id;
+}
+

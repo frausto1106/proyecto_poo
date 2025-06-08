@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "Serie.hpp"
+#include "../Video/Video.hpp"
 
 using namespace  std;
 Serie::Serie(
@@ -15,10 +16,16 @@ Serie::Serie(
     string genero,
     string clasificacion,
     vector<Episodio> episodios
-):Video(id, nombre, 0.0, numeroDeCalificaciones, sumCalificaciones, calificacion, genero),
-  paisDeOrigen(paisDeOrigen),
-  clasificacion(clasificacion),
-  episodios(episodios)
+):
+    id(id),
+    nombre(nombre),
+    calificacion(calificacion),
+    numeroDeCalificaciones(numeroDeCalificaciones),
+    sumCalificaciones(sumCalificaciones),
+    genero(genero),
+    paisDeOrigen(paisDeOrigen),
+    clasificacion(clasificacion),
+    episodios(episodios)
 {}
 
 
@@ -34,16 +41,68 @@ void Serie::agregarEpisodio(Episodio ep) {
     cout<<"episodio agregado exitosamente"<<endl;
 }
 
-void Serie::mostrarEpisodioPorTemporada(int temporada) {
-    for (int i = 0; i < episodios.size(); i++) {
-        if (episodios[i].getTemporada() ==  temporada) {
-            episodios[i].mostrarInfo();
-            cout << endl;
+void Serie::mostrarEpisodioPorTemporada() {
+    while (true){
+
+        int temp;
+        cout<<"introduce la temporada: " <<endl;
+        cin>>temp;
+
+        for (int i = 0; i < episodios.size(); i++) {
+            if (episodios[i].getTemporada() ==  temp) {
+                episodios[i].mostrarInfo();
+                cout << endl;
+                return;
+            }
+        }
+        cout<<"no se encontro esa temporada"<<endl;
+        string opc;
+        cout<<"salir? [S/N]"<<endl;
+        cin>>opc;
+        if (opc=="s") {
+            break;
         }
     }
+
 }
 
+void Serie::mostrarEpisodioPorCalificacion() {
+    while (true){
+
+        int cal;
+        cout<<"introduce la calificacion (1-5): " <<endl;
+        cin>>cal;
+
+        if (cal<1 || cal>5) {
+            cout<<"introduce una calificacion valida"<<endl;
+            return;
+        }
+
+        for (int i = 0; i < episodios.size(); i++) {
+            if (episodios[i].getCalificacion() ==  cal) {
+                episodios[i].mostrarInfo();
+                cout << endl;
+                return;
+            }
+        }
+        cout<<"no se encontraron espisodios con ese score"<<endl;
+        string opc;
+        cout<<"salir? [S/N]"<<endl;
+        cin>>opc;
+        if (opc=="s") {
+            break;
+        }
+    }
+
+}
+
+
 void Serie::mostrarInfo() {
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout <<"-----------SERIE-----------"<<endl;
+    cout << "id: " << id << endl;
     cout << "nombre: " << nombre << endl;
     cout << "calificacion: " << calificacion << endl;
     cout <<"pais de origen: " << paisDeOrigen << endl;
@@ -62,6 +121,28 @@ void Serie::calificar() {
 
     this->calificacion = (sumCalificaciones /numeroDeCalificaciones);
 
+}
+
+void Serie::calucularMaraton() {
+    double tiempo = 0;
+    for (int i = 0; i< episodios.size(); i++) {
+        tiempo = episodios[i] + tiempo;
+    }
+
+    cout<<"la serie durá "<<tiempo<<" en total";
+
+}
+vector<Episodio> Serie::getEpisodios() {
+    return episodios;
+}
+
+
+string Serie::getNombre() {
+    return nombre;
+}
+
+string Serie::getId() {
+    return id;
 }
 
 
