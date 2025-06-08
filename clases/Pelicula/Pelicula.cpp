@@ -6,8 +6,23 @@
 #include <iostream>
 using namespace std;
 
-Pelicula::Pelicula(string id, string titulo, double duracion, string genero, string clasificacion, string paisDeOrigen, double duracionCreditos)
-    : Video(id, titulo, duracion, genero), clasificacion(clasificacion), paisDeOrigen(paisDeOrigen), duracionCreditos(duracionCreditos) {}
+Pelicula::Pelicula(
+    string id,
+    string titulo,
+    double duracion,
+    int numeroDeCalificaciones,
+    int sumCalificacion,
+    double calificacion,
+    string genero,
+    string clasificacion,
+    string paisDeOrigen,
+    double duracionCreditos
+)
+    : Video(id, titulo, duracion, numeroDeCalificaciones, sumCalificacion, calificacion, genero),
+      clasificacion(clasificacion),
+      paisDeOrigen(paisDeOrigen),
+      duracionCreditos(duracionCreditos)
+{}
 
 void Pelicula::mostrarInfo() override{
     cout << "titulo: " << titulo << endl;

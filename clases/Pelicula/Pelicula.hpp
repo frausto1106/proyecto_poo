@@ -16,12 +16,19 @@ protected:
     string paisDeOrigen;
     double duracionCreditos;
 
-
 public:
-    Pelicula(string clasificacion, string paisDeOrigen, double duracionCredito);
-
-    Pelicula(string id, string titulo, double duracion, string genero, string clasificacion, string paisDeOrigen,
-             double duracionCreditos);
+    Pelicula(
+        string id,
+        string titulo,
+        double duracion,
+        int numeroDeCalificaciones,
+        int sumCalificacion,
+        double calificacion,
+        string genero,
+        string clasificacion,
+        string paisDeOrigen,
+        double duracionCreditos
+    );
 
     void mostrarInfo() override;
     double calcularDuracion() override;

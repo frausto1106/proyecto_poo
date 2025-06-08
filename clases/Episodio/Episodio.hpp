@@ -14,10 +14,20 @@ protected:
     int temporada;
 
 public:
-    Episodio(int temporada, string id, string titulo, double duracion, string genero);
+    Episodio(
+        string id,
+        string titulo,
+        double duracion,
+        int numeroDeCalificaciones,
+        int sumCalificacion,
+        double calificacion,
+        string genero,
+        int temporada
+    );
 
     int getTemporada();
     void mostrarInfo() override;
+
     friend double operator +(Episodio& e1, Episodio& e2);
     friend double operator +(int& e1, Episodio& e2);
 };
@@ -25,3 +35,4 @@ public:
 
 
 #endif //EPISODIO_HPP
+

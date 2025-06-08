@@ -5,8 +5,22 @@
 #include "Serie.hpp"
 
 using namespace  std;
-Serie::Serie(string nombre, string paisDeOrigen,string genero,string clasificacion):
-    nombre(nombre), calificacion(0), numeroDeCalificaciones(0), sumCalificaciones(0), episodios{}, paisDeOrigen(paisDeOrigen), genero(genero), clasificacion(clasificacion) {}
+Serie::Serie(
+    string id,
+    string nombre,
+    double calificacion,
+    int numeroDeCalificaciones,
+    int sumCalificaciones,
+    string paisDeOrigen,
+    string genero,
+    string clasificacion,
+    vector<Episodio> episodios
+):Video(id, nombre, 0.0, numeroDeCalificaciones, sumCalificaciones, calificacion, genero),
+  paisDeOrigen(paisDeOrigen),
+  clasificacion(clasificacion),
+  episodios(episodios)
+{}
+
 
 void Serie::mostrarEpisodios() {
     for (int i = 0; i < episodios.size(); i++) {
@@ -15,7 +29,7 @@ void Serie::mostrarEpisodios() {
     }
 }
 
-void Serie::agregarEpisodio(Episodio &ep) {
+void Serie::agregarEpisodio(Episodio ep) {
     episodios.push_back(ep);
     cout<<"episodio agregado exitosamente"<<endl;
 }
@@ -49,5 +63,7 @@ void Serie::calificar() {
     this->calificacion = (sumCalificaciones /numeroDeCalificaciones);
 
 }
+
+
 
 

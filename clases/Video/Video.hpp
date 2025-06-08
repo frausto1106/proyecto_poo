@@ -2,6 +2,7 @@
 // Created by Kaled Frausto on 07/06/25.
 //
 #include <iostream>
+#include <string>
 #ifndef VIDEO_HPP
 #define VIDEO_HPP
 
@@ -19,7 +20,16 @@ protected:
     string genero;
     int sumCalificacion;
 
-    Video(string id, string titulo, double duracion, string genero);
+    Video(
+        string id,
+        string titulo,
+        double duracion,
+        int numeroDeCalificaciones,
+        int sumCalificacion,
+        double calificacion,
+        string genero
+    );
+
 public:
     virtual  void mostrarInfo() = 0;
     virtual double calcularDuracion();

@@ -1,0 +1,76 @@
+{
+  "series": [
+    {
+      "id": "s2",
+      "nombre": "luis miguel",
+      "calificacion": 4.7,
+      "paisDeOrigen": "Mexico",
+      "sumCalificaciones": 94,
+      "numeroDeCalificaciones": 20,
+      "genero": "Drama",
+      "clasificacion": "PG-18",
+      "episodios": [
+        {
+          "id": "AG-S1E1",
+          "titulo": "Cuando calienta el Sol",
+          "duracion": 45.0,
+          "genero": "Drama",
+          "temporada": "1"
+        },
+        {
+          "id": "AG-S1E2",
+          "titulo": "Historia de un amor",
+          "duracion": 47.0,
+          "genero": "Romance",
+          "temporada": "1"
+        },
+        {
+          "id": "AG-S2E1",
+          "titulo": "Todo el Amor Del mundo",
+          "duracion": 50.0,
+          "genero": "Drama",
+          "temporada": "2"
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "nombre": "Rick and morty",
+      "calificacion": 4.2,
+      "paisDeOrigen": "USA",
+      "sumCalificaciones": 63,
+      "numeroDeCalificaciones": 15,
+      "genero": "Sci-fi",
+      "clasificacion": "B",
+      "episodios": [
+        {
+          "id": "CT-S1E1",
+          "titulo": "Parque anatomico",
+          "duracion": 52.0,
+          "genero": "accion",
+          "temporada": "1"
+        }
+      ]
+    }
+  ],
+  "peliculas": [
+    {
+      "id": "MV1",
+      "titulo": "Ted2",
+      "duracion": 138.0,
+      "genero": "Accion",
+      "clasificacion": "R",
+      "paisDeOrigen": "México",
+      "duracionCreditos": 6.0
+    },
+    {
+      "id": "MV2",
+      "titulo": "Notas del Alma",
+      "duracion": 100.0,
+      "genero": "Drama",
+      "clasificacion": "A",
+      "paisDeOrigen": "Argentina",
+      "duracionCreditos": 4.5
+    }
+  ]
+}

@@ -11,6 +11,7 @@ using namespace std;
 
 class Serie {
 private:
+    string id;
     string nombre;
     double calificacion;
     int numeroDeCalificaciones;
@@ -18,12 +19,24 @@ private:
     string paisDeOrigen;
     string genero;
     string clasificacion;
-    vector<&Episodio> episodios;
+    vector<Episodio> episodios;
 
 public:
-    Serie(string nombre);
+    Serie(
+        string id,
+        string nombre,
+        double calificacion,
+        int numeroDeCalificaciones,
+        int sumCalificaciones,
+        string paisDeOrigen,
+        string genero,
+        string clasificacion,
+        vector<Episodio> episodios
+    );
+
+
     void mostrarEpisodios();
-    void agregarEpisodio(Episodio &ep);
+    void agregarEpisodio(Episodio ep);
     void mostrarEpisodioPorTemporada(int temporada);
     void mostrarInfo();
     void calificar();
@@ -32,3 +45,5 @@ public:
 
 
 #endif //SERIE_HPP
+
+

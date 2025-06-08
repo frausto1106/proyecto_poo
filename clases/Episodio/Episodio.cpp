@@ -8,8 +8,18 @@
 using namespace std;
 
 
-Episodio::Episodio(int temporada, string id, string titulo, double duracion, string genero): Video(id, titulo, duracion, genero), temporada(temporada){}
-
+Episodio::Episodio(
+        string id,
+        string titulo,
+        double duracion,
+        int numeroDeCalificaciones,
+        int sumCalificacion,
+        double calificacion,
+        string genero,
+        string temporada
+    ) : Video(id, titulo, duracion, numeroDeCalificaciones, sumCalificacion, calificacion, genero),
+        temporada(temporada)
+{}
 
 int Episodio::getTemporada() {
     return temporada;

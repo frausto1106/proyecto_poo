@@ -6,8 +6,23 @@
 using namespace std;
 
 
-Video::Video(string id, string titulo, double duracion, string genero)
-    : id(id), titulo(titulo), duracion(duracion), genero(genero),numeroDeCalificaciones(0), calificacion(0.0), sumCalificacion(0) {}
+Video::Video(
+    string id,
+    string titulo,
+    double duracion,
+    int numeroDeCalificaciones,
+    int sumCalificacion,
+    double calificacion,
+    string genero
+) :
+    id(id),
+    titulo(titulo),
+    duracion(duracion),
+    numeroDeCalificaciones(numeroDeCalificaciones),
+    sumCalificacion(sumCalificacion),
+    calificacion(calificacion),
+    genero(genero)
+{}
 
 double Video::calcularDuracion() {
 return duracion;
