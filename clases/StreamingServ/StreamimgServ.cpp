@@ -96,7 +96,7 @@ int StreamimgServ::mostrarMenuSeries() {
     cout << "8- Acceder al menú de un capítulo\n";
     cout << "9- Salir\n";
     cin >> opc;
-    cin.ignore(); // limpiar buffer
+    cin.ignore();
     return opc;
 }
 
@@ -208,7 +208,7 @@ void StreamimgServ::menuCapitulo() {
                         cout << "2- Calificar capítulo\n";
                         cout << "3- Salir\n";
                         cin >> opc;
-                        cin.ignore(); // limpiar buffer
+                        cin.ignore();
 
                         if (opc == 1) {
                             Series[i].getEpisodios()[j].mostrarInfo();
@@ -239,7 +239,7 @@ void StreamimgServ::mostrarPeliculasPorCalificacion() {
     int cal;
     cout << "Mostrar películas por calificación (1-5): ";
     cin >> cal;
-    cin.ignore(); // limpiar buffer
+    cin.ignore();
 
     for (size_t i = 0; i < Peliculas.size(); ++i) {
         if (Peliculas[i].getCalificacion() == cal) {
