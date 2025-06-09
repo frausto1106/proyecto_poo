@@ -47,6 +47,8 @@ public:
 
     void calificarPeli();
 
+    void duracionPeli();
+
     void mostrarTodosLosVideos();
 
     int menuSeries();

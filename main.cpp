@@ -16,10 +16,11 @@ int main() {
         cout << "3 - Mostrar Películas por Calificación\n";
         cout << "4 - Calificar una Película\n";
         cout << "5 - Mostrar todos los videos\n";
-        cout << "6 - Salir\n";
+        cout << "6 - Calcular duración total de una película\n";
+        cout << "7 - Salir\n";
         cout << "Selecciona una opción: ";
         cin >> opcionPrincipal;
-        cin.ignore(); 
+        cin.ignore();
 
         switch (opcionPrincipal) {
             case 1: {
@@ -75,7 +76,10 @@ int main() {
                 servicio.mostrarTodosLosVideos();
                 break;
             case 6:
-                cout << "Saliendo del programa.\n";
+                servicio.duracionPeli();
+                break;
+            case 7:
+                cout << "¡Hasta luego!\n";
                 break;
             default:
                 cout << "Opción no válida.\n";
@@ -83,7 +87,8 @@ int main() {
         }
 
         cout << "\n";
-    } while (opcionPrincipal != 6);
+
+    } while (opcionPrincipal != 7);
 
     return 0;
 }

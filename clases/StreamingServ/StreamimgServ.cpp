@@ -262,6 +262,21 @@ void StreamimgServ::calificarPeli() {
     cout << "Película no encontrada.\n";
 }
 
+void StreamimgServ::duracionPeli() {
+    string input;
+    cout << "Introduce el ID o nombre de la película: ";
+    getline(cin, input);
+
+    for (size_t i = 0; i < Peliculas.size(); ++i) {
+        if (Peliculas[i].getId() == input || Peliculas[i].getTitulo() == input) {
+            cout<<"duracion total en minutos: "<<Peliculas[i].calcularDuracion()<<endl;
+
+            return;
+        }
+    }
+    cout << "Película no encontrada.\n";
+}
+
 void StreamimgServ::mostrarTodosLosVideos() {
 
 
