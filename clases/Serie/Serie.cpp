@@ -47,6 +47,7 @@ void Serie::mostrarEpisodioPorTemporada() {
         int temp;
         cout<<"introduce la temporada: " <<endl;
         cin>>temp;
+        cin.ignore(); 
 
         for (int i = 0; i < episodios.size(); i++) {
             if (episodios[i].getTemporada() ==  temp) {
@@ -72,6 +73,7 @@ void Serie::mostrarEpisodioPorCalificacion() {
         int cal;
         cout<<"introduce la calificacion (1-5): " <<endl;
         cin>>cal;
+        cin.ignore(); 
 
         if (cal<1 || cal>5) {
             cout<<"introduce una calificacion valida"<<endl;
@@ -89,6 +91,7 @@ void Serie::mostrarEpisodioPorCalificacion() {
         string opc;
         cout<<"salir? [S/N]"<<endl;
         cin>>opc;
+        cin.ignore(); 
         if (opc=="s") {
             break;
         }

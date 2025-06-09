@@ -5,7 +5,7 @@
 #ifndef SERIE_HPP
 #define SERIE_HPP
 #include <iostream>
-
+#include <vector>
 #include "../Episodio/Episodio.hpp"
 using namespace std;
 

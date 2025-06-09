@@ -1,5 +1,5 @@
 //
-// Created by Kaled Frausto on 07/06/25.
+// Created by Kaled Frausto and Bruno Gonzalez on 07/06/25.
 //
 
 #ifndef EPISODIO_HPP

@@ -1,9 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <nlohmann/json.hpp>
-
 #include "clases/StreamingServ/StreamimgServ.hpp"
-
+#include <nlohmann/json.hpp>
 using json = nlohmann::json;
 using namespace std;
 
@@ -21,6 +19,7 @@ int main() {
         cout << "6 - Salir\n";
         cout << "Selecciona una opción: ";
         cin >> opcionPrincipal;
+        cin.ignore(); 
 
         switch (opcionPrincipal) {
             case 1: {
@@ -53,9 +52,6 @@ int main() {
                             servicio.menuCapitulo();
                             break;
                         case 9:
-                            servicio.mostrarTodosLosVideos();
-                            break;
-                        case 10:
                             cout << "Regresando al menú principal...\n";
                             break;
                         default:
@@ -63,7 +59,7 @@ int main() {
                             break;
                     }
                     cout << "\n";
-                } while (opcionSerie != 10);
+                } while (opcionSerie != 9);
                 break;
             }
             case 2:

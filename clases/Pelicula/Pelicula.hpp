@@ -1,5 +1,5 @@
 //
-// Created by Kaled Frausto on 07/06/25.
+// Created by Bruno Gonzalez on 07/06/25.
 //
 
 #ifndef PELICULA_HPP
