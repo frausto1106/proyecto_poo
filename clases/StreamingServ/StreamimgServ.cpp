@@ -1,3 +1,7 @@
+//
+// Created by Bruno Gonzalez on 08/06/25.
+//
+
 #include "StreamimgServ.hpp"
 #include <fstream>
 #include <vector>
