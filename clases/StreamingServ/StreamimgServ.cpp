@@ -1,5 +1,5 @@
 //
-// Created by Bruno Gonzalez on 08/06/25.
+// Created by Kaled Frausto on 08/06/25.
 //
 
 #include "StreamimgServ.hpp"
